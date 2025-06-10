@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chamanis | Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #000;
+    }
+
+    h3, h4 {
+      font-family: "Poppins", sans-serif;
+    }
+
+    h4 {
+      font-size: 28px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo img {
+      height: 20px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #222222;
+      border-bottom: 2px solid #222222;
+    }
+
+    .products-section {
+      padding: 2rem 1rem;
+    }
+
+    .products-section h2 {
+      font-size: 2rem;
+      color: #222222;
+      border-bottom: 2px solid #222222;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .product-card {
+      background: none;
+      border: none;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: 12px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .product-card p {
+      margin: 0.5rem 0 0.25rem;
+      color: #222222;
+    }
+
+    .sort-container {
+      text-align: right;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      color: #222222;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .sort-container label {
+      margin-right: 0.5rem;
+    }
+
+    .sort-container select {
+      border: none;
+      background: transparent;
+      color: #222222;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      padding: 0.2rem 0.5rem;
+      border-bottom: 1.5px solid #222222;
+      appearance: none;
+    }
+
+    .sort-container select:focus {
+      outline: none;
+      border-bottom: 2px solid #222222;
+    }
+
+    footer {
+      border-top: 1px solid #ccc;
+      padding: 20px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    footer .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: left;
+      padding: 0 40px;
+    }
+
+    .socials img {
+      width: 30px;
+      margin-right: 5px;
+    }
+
+    .socials a {
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="Chamanis Logo.png" alt="Chamanis Logo">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="products-section">
+    <h2>Drinks</h2>
+
+    <div class="sort-container">
+      <label for="sortSelect">Sort by:</label>
+      <select id="sortSelect" onchange="sortProducts(this, 'menu-products')">
+        <option value="default">Default</option>
+        <option value="az">A to Z</option>
+        <option value="za">Z to A</option>
+      </select>
+      <span id="product-count" style="margin-left: 1rem;"></span>
+    </div>
+
+    <div id="menu-products">
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="Cold Brew First Spring Harvest 2025 Green Tea.png" alt="Green Tea">
+          <p>Cold Brew Green Tea</p>
+          <p><strong>RM 15.00</strong></p>
+        </div>
+        
+        <div class="product-card">
+          <img src="Matcha Aqua.png" alt="Matcha Aqua">
+          <p>Matcha Aqua</p>
+          <p><strong>RM 15.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Matcha Latte.png" alt="Matcha Latte">
+          <p>Matcha Latte</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Kyushu Matcha Meets Italian Arabica Latte.png" alt="Kyushu Matcha Meets Italian Arabica Latte">
+          <p>Kyushu Matcha</p>
+          <p>Meets Italian Arabica Latte</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Matcha Saffron.png" alt="Matcha Saffron">
+          <p>Matcha Saffron</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Matcha Keningau Sunrise.png" alt="Matcha Keningau Sunrise">
+          <p>Matcha Keningau Sunrise</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Matcha Asam Manis.png" alt="Matcha Asam Manis">
+          <p>Matcha Asam Manis</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Matcha Telang Biru.png" alt="Matcha Telang Biru">
+          <p>Matcha Telang Biru</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Kyushu Matcha Avocado.png" alt="Kyushu Matcha Avocado">
+          <p>Kyushu Matcha Avocado</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Kyushu Matcha Coconut Water.png" alt="Kyushu Matcha Coconut Water">
+          <p>Kyushu Matcha Coconut Water</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Organic Sunset Matcha.png" alt="Organic Sunset Matcha">
+          <p>Organic Sunset Matcha</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Kokoloko Luxury Iced Chocolate.png" alt="Kokoloko Luxury Iced Chocolate">
+          <p>Kokoloko Luxury Iced Chocolate</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Iced Original Spainish Latte (Pure Italian Arabica).png" alt="Iced Original Spanish Latte">
+          <p>Iced Original Spanish Latte</p>
+          <p>(Pure Italian Arabica)</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+
+        <div class="product-card">
+          <img src="Iced Latte (Pure Italian Arabica).png" alt="Iced Latte">
+          <p>Iced Latte</p>
+          <p>(Pure Italian Arabica)</p>
+          <p><strong>RM 16.00</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <h2>Products</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="Matcha Truffles.jpg" alt="Matcha Truffles">
+        <p>Matcha Truffles (15pcs)</p>
+        <p><strong>RM 58.00</strong></p>
+      </div>
+      <div class="product-card">
+        <img src="Chamanis Matcha.jpg" alt="Chamanis Matcha">
+        <p>Chamanis Matcha (38G)</p>
+        <p><strong>RM 88.00</strong></p>
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <p>CHAMANIS, House No.41, Jalan Lingkudau, Keningau, Sabah, 89000, Malaysia</p>
+      <p>chamanis.my@gmail.com</p>
+      <p>+60 11-6316 4883</p>
+    </div>
+    <div class="socials">
+  <a href="https://instagram.com/chamanisofficial" target="_blank" rel="noopener noreferrer">
+    <img src="Instagram Icon.png" alt="IG" />
+  </a>
+  <a href="https://www.facebook.com/share/19A1sUFk9f/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+    <img src="Facebook Icon.png" alt="FB" />
+  </a>
+  <a href="https://tiktok.com/@chamanis.borneo" target="_blank" rel="noopener noreferrer">
+    <img src="TikTok Icon.png" alt="TikTok" />
+  </a>
+  <a href="https://open.spotify.com/playlist/0WoXQvHwz2Qjvg4P2M6bEj?si=fIIGIZ6kQGCe5k0lm2ZLpA&pt=f39f9eaa36feef5c75e64cb9faae0a4b&pi=tcgsaO5VSA22V" target="_blank" rel="noopener noreferrer">
+    <img src="Spotify Icon.png" alt="Spotify" />
+  </a>
+</div>
+  <br/>
+  <p>© 2024 Chamanis | Developed by Darryl Sean Yong</p>
+</footer>
+
+<script>
+    function sortProducts(select, containerId) {
+      const order = select.value;
+      const container = document.getElementById(containerId);
+      const grid = container.querySelector('.products-grid');
+      const cards = Array.from(grid.children);
+
+      if (order === 'default') {
+          location.reload();
+          return;
+      }
+
+      cards.sort((a, b) => {
+          const nameA = a.querySelector('p').textContent.trim().toLowerCase();
+          const nameB = b.querySelector('p').textContent.trim().toLowerCase();
+          return order === 'az' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+      });
+
+      grid.innerHTML = '';
+      cards.forEach(card => grid.appendChild(card));
+
+      updateProductCount();
+      }
+
+      function updateProductCount() {
+      const count = document.querySelectorAll('#menu-products .product-card').length;
+      document.getElementById('product-count').textContent = `(${count} items)`;
+      }
+
+      updateProductCount();
+</script>
+</body>
+</html>
