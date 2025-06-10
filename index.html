@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chamanis | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #000;
+    }
+
+    h3, h4 {
+      font-family: "Poppins", sans-serif;
+    }
+
+    h4 {
+      font-size: 28px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo img {
+      height: 20px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #222222;
+      border-bottom: 2px solid #222222;
+    }
+
+    .matcha-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .matcha-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .matcha-gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .matcha-center {
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    .matcha-center p {
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .about-section {
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 60px;
+      justify-content: center;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .about-image {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-text {
+      max-width: 500px;
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .about-text h4 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #000;
+      background-color: #fff;
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .portfolio-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .portfolio-item p {
+      margin-top: 8px;
+      font-family: Arial, sans-serif;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    form {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 8px 4px;
+      margin-bottom: 16px;
+      border: none;
+      border-bottom: 1px solid #aaa;
+      background: transparent;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-bottom: 1px solid black;
+    }
+
+    footer {
+      border-top: 1px solid #ccc;
+      padding: 20px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    footer .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: left;
+      padding: 0 40px;
+    }
+
+    .socials img {
+      width: 30px;
+      margin-right: 5px;
+    }
+
+    .socials a {
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .matcha-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+
+      .matcha-center {
+        grid-column: 1 / span 2;
+        grid-row: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="Chamanis Logo.png" alt="Chamanis Logo">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="matcha-section">
+  <div class="matcha-gallery">
+    <img src="Top Left.png" alt="Top Left">
+    <img src="Top Right.png" alt="Top Left 2">
+
+    <div class="matcha-center">
+      <h3>Matcha Talk</h3>
+      <p>A Sip of Tradition, A Touch of Home</p>
+    </div>
+
+    <img src="Center Left.png" alt="Top Right 1">
+    <img src="Center Right.png" alt="Top Right 2">
+    <img src="Bottom Left.png" alt="Bottom Left 1">
+    <img src="Bottom Left 2.png" alt="Bottom Left 2">
+    <img src="Bottom Right 2.png" alt="Bottom Right 1">
+    <img src="Bottom Right.png" alt="Bottom Right 2">
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-content">
+    <img src="History.png" alt="Chamanis Origin" class="about-image" />
+    <div class="about-text">
+      <h4>About Chamanis</h4>
+      <p>
+        What is known as CHAMANIS Borneo today emerged in 2019 under the moniker TENCHA...
+      </p>
+      <a href="about.html" class="read-more-btn">Read More</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h4>Portfolio</h4>
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <img src="01-At Park Hyatt.png" />
+      <p>At Park Hyatt</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="02-At Zouk At Sea.png" />
+      <p>At Zouk At Sea</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="03-At SCANDINAVIA.png" />
+      <p>At Scandinavia</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="04-At Takayama.png" />
+      <p>At Takayama</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="05-At Tipping Club.png" />
+      <p>At Tipping Club</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="06-At Tesouro.png" />
+      <p>At Tesouro</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="07-At Alila.png" />
+      <p>At Alila</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="08-At Native.png" />
+      <p>At Native</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="09-At union brauerei.png" />
+      <p>At Union brauerei</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="10-AT Maison 21G.png" />
+      <p>At Maison</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="11-AT Starter Lab.png" />
+      <p>At Starter Lab</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="12-AT Oriental Elixir.png" />
+      <p>At Oriental Elixir</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <p>CHAMANIS, House No.41, Jalan Lingkudau, Keningau, Sabah, 89000, Malaysia</p>
+      <p>chamanis.my@gmail.com</p>
+      <p>+60 11-6316 4883</p>
+    </div>
+    <div class="socials">
+  <a href="https://instagram.com/chamanisofficial" target="_blank" rel="noopener noreferrer">
+    <img src="Instagram Icon.png" alt="IG" />
+  </a>
+  <a href="https://www.facebook.com/share/19A1sUFk9f/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+    <img src="Facebook Icon.png" alt="FB" />
+  </a>
+  <a href="https://tiktok.com/@chamanis.borneo" target="_blank" rel="noopener noreferrer">
+    <img src="TikTok Icon.png" alt="TikTok" />
+  </a>
+  <a href="https://open.spotify.com/playlist/0WoXQvHwz2Qjvg4P2M6bEj?si=fIIGIZ6kQGCe5k0lm2ZLpA&pt=f39f9eaa36feef5c75e64cb9faae0a4b&pi=tcgsaO5VSA22V" target="_blank" rel="noopener noreferrer">
+    <img src="Spotify Icon.png" alt="Spotify" />
+  </a>
+</div>
+  <br/>
+  <p>© 2024 Chamanis | Developed by Darryl Sean Yong</p>
+</footer>
+
+<div id="portfolioModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; 
+background-color: rgba(0,0,0,0.7); justify-content: center; align-items: center; text-align: center;">
+  <div style="background: #fff; padding: 20px; max-width: 90%; max-height: 90%; border-radius: 8px; position: relative;">
+    <span onclick="closeModal()" style="position: absolute; top: 10px; right: 20px; font-size: 28px; cursor: pointer;">&times;</span>
+    <img id="modalImg" src="" alt="" style="max-width: 100%; max-height: 60vh; border-radius: 8px;" />
+    <p id="modalText" style="margin-top: 16px; font-family: 'Poppins', sans-serif;"></p>
+  </div>
+</div>
+
+<script>
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  const modal = document.getElementById('portfolioModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalText = document.getElementById('modalText');
+
+  const descriptions = {
+    "01-At Park Hyatt.png": "Experience luxury matcha indulgence at Park Hyatt.",
+    "02-At Zouk At Sea.png": "Matcha making waves aboard Zouk At Sea.",
+    "03-At SCANDINAVIA.png": "Bringing Bornean matcha to the Nordic edge.",
+    "04-At Takayama.png": "Where matcha meets Japanese haute cuisine.",
+    "05-At Tipping Club.png": "Craft cocktails meet crafted matcha.",
+    "06-At Tesouro.png": "Hidden gem, treasure-worthy matcha.",
+    "07-At Alila.png": "Serene retreats with our calming blends.",
+    "08-At Native.png": "Matcha with a local touch, reinvented.",
+    "09-At union brauerei.png": "A matcha toast at Union Brauerei.",
+    "10-AT Maison 21G.png": "Scents and sips – Maison meets matcha.",
+    "11-AT Starter Lab.png": "Freshly brewed and baked brilliance.",
+    "12-AT Oriental Elixir.png": "Matcha and mixology in perfect harmony."
+  };
+
+  portfolioItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      modalImg.src = img.src;
+      modalText.textContent = descriptions[img.src.split('/').pop()] || "Delight in our matcha journey.";
+      modal.style.display = 'flex';
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+  }
+
+  window.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+</script>
+
+</body>
+</html>
